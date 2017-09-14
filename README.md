@@ -1,6 +1,6 @@
 ## Setup CABLE on the CCRC storm servers
 
-## Get latest tagged version
+### Get latest tagged version
 
 This obviously relies on your stating which tag you want, look at
 https://trac.nci.org.au/svn/cable/tags/
