@@ -14,7 +14,7 @@ root="https://trac.nci.org.au/svn/cable"
 user="mgk576"
 tag="CABLE-2.3.4"
 branch="test"
-msg="setup test repo"
+msg="'setup test repo'"
 
 if [ ! .svn ]
 then
