@@ -14,13 +14,13 @@ root="https://trac.nci.org.au/svn/cable"
 user="mgk576"
 tag="CABLE-2.3.4"
 branch="test"
-msg="'setup test repo'"
+msgx="\"setup test repo\""
 
 if [ ! .svn ]
 then
     rm -rf .svn
 fi
 
-svn copy $root/tags/$tag $root/branches/Users/$user/$tag"_"$branch -m $msg
+svn copy $root/tags/$tag $root/branches/Users/$user/$tag"_"$branch -m $msgx
 svn checkout $root/branches/Users/$user/$tag"_"$branch $tag"_"$branch
 svn checkout $root/branches/Share/CABLE-AUX CABLE-AUX
