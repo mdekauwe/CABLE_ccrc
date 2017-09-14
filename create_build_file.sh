@@ -28,7 +28,7 @@ gawk -v var="$HOST_MACH" '/   set/ {$0=$0" "var} 1' $fname > x.tmp
 mv x.tmp $fname
 
 # Step 2
-gsed -i "8i\\
+sed -i "8i\\
 host_$HOST_MACH(){\\
     export NCDIR='$nc_path/lib/'\\
     export NCMOD='$nc_path/include/'\\
