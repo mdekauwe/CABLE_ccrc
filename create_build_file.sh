@@ -11,8 +11,8 @@
 fname=build.ksh
 tag=CABLE-2.3.4
 branch="test"
-nc_path="/opt/local"
-fc="gfortran"
+nc_path="/usr/local/netcdf/intel/4.1.3"
+fc="ifort"
 HOST_MACH=`uname -n | cut -c 1-4`
 
 
