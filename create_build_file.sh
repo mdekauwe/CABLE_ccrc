@@ -7,7 +7,6 @@
 # date:   11 September 2017
 #
 
-
 fname=build.ksh
 tag=CABLE-2.3.4
 branch="test"
