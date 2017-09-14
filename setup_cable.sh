@@ -12,6 +12,7 @@ user="mgk576"
 tag="CABLE-2.3.4"
 branch="test"
 msg="\"setup test repo\""
+cleanup=true
 
 if [ ! .svn ]
 then
@@ -20,4 +21,14 @@ fi
 
 svn copy $root/tags/$tag $root/branches/Users/$user/$tag"_"$branch -m "$msg"
 svn checkout $root/branches/Users/$user/$tag"_"$branch $tag"_"$branch
-svn checkout $root/branches/Share/CABLE-AUX CABLE-AUX
+
+if [ -d "../CABLE-AUX" ]
+then
+    echo "Directory exists"
+else
+    svn checkout $root/branches/Share/CABLE-AUX CABLE-AUX
+    if [ "$cleanup" = true ]
+    then
+        mv CABLE-AUX ../.
+    fi
+fi
