@@ -6,9 +6,6 @@
 # author: Martin De Kauwe
 # date:   11 September 2017
 #
-# NB. to deleta a branch:
-# svn rm https://trac.nci.org.au/svn/cable/branches/Users/mgk576/CABLE-2.3.4_testing -m "Deleting test branch"
-
 
 root="https://trac.nci.org.au/svn/cable"
 user="mgk576"
