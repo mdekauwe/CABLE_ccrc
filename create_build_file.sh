@@ -15,6 +15,8 @@ nc_path="/usr/local/netcdf/intel/4.1.3"
 fc="ifort"
 HOST_MACH=`uname -n | cut -c 1-4`
 
+module add intel/15.0.3.187
+module add netcdf/4.2.1-intel
 
 cd $tag"_"$branch/offline
 
