@@ -19,6 +19,6 @@ then
     rm -rf .svn
 fi
 
-svn copy $root/tags/branches/Users/$other_user/$their_branch $root/branches/Users/$user/$tag"_"$branch -m "$msg"
+svn copy $root/branches/Users/$other_user/$their_branch $root/branches/Users/$user/$tag"_"$branch -m "$msg"
 svn checkout $root/branches/Users/$user/$tag"_"$branch $tag"_"$branch
 svn checkout $root/branches/Share/CABLE-AUX CABLE-AUX
