@@ -20,7 +20,8 @@ cleanup=true
 
 # Default behaviour is to get the latest tag (noting that this link will be out
 # of date). Tag
-tag="CABLE-2.3.4"
+#tag="CABLE-2.3.4"
+tag="trunk"
 branch="test"
 
 # if you change either of these options (both false by default), you need to
@@ -32,7 +33,6 @@ someones_branch=false
 if [ "$trunk" == true ]
 then
     someones_branch=false
-    tag="CABLE_trunk"
 fi
 
 # Grab someone else's branch?
@@ -54,8 +54,8 @@ fi
 if [ "$trunk" == true ]
 then
     # NB tag here doesn't mean the tagged version! See above
-    svn copy $root/trunk $root/branches/Users/$user/$tag -m "$msg"
-    svn checkout $root/branches/Users/$user/$tag $tag
+    svn copy $root/trunk $root/branches/Users/$user/$tag"_"$branch -m "$msg"
+    svn checkout $root/branches/Users/$user/$tag"_"$branch $tag"_"$branch
 elif [ "$someones_branch" == true ]
 then
     svn copy $root/branches/Users/$other_user/$their_branch $root/branches/Users/$user/$tag"_"$branch -m "$msg"
