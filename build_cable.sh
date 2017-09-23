@@ -4,12 +4,12 @@
 # There are three stages to this...
 #
 # author: Martin De Kauwe
-# date:   11 September 2017
+# date:   23rd September 2017
 #
 
 fname=build.ksh
-tag=CABLE-2.3.4
-branch="tag"
+tag="CABLE"
+branch="trunk"
 HOST_MACH=`uname -n | cut -c 1-4`
 ARCH=$(uname -s)
 
@@ -27,9 +27,6 @@ else
 fi
 
 cd $tag"_"$branch/offline
-
-# you may want to uncomment this if you believe in safety
-#cp $fname "backup_"build.ksh
 
 # Step 1
 gawk -v var="$HOST_MACH" '/   set/ {$0=$0" "var} 1' $fname > x.tmp
@@ -52,3 +49,5 @@ host_$HOST_MACH(){\\
 
 # Step 3
 chmod +x build.ksh
+./build.ksh
+cd ../../

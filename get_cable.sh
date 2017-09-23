@@ -10,30 +10,22 @@
 # -> https://trac.nci.org.au/svn/cable/tags/CABLE-2.3.4/
 #
 # author: Martin De Kauwe
-# date:   11 September 2017
+# date:   23rd September 2017
 #
-
-root="https://trac.nci.org.au/svn/cable"
-user="mgk576"
-msg="\"setup test repo\""
-cleanup=true
 
 # Default behaviour is to get the latest tag (noting that this link will be out
 # of date). Tag
-#tag="CABLE-2.3.4"
-tag="trunk"
-branch="test"
+tag="CABLE"
+branch="trunk"
 
 # if you change either of these options (both false by default), you need to
 # edit below in the if statements too
-trunk=false
+trunk=true
 someones_branch=false
 
-# Get the trunk?
-if [ "$trunk" == true ]
-then
-    someones_branch=false
-fi
+root="https://trac.nci.org.au/svn/cable"
+user="mgk576"
+msg="\"setup repo\""
 
 # Grab someone else's branch?
 if [ "$someones_branch" == true ]
@@ -44,7 +36,6 @@ then
     tag="CABLE-"$their_branch
     branch="what"
 fi
-
 
 if [ ! .svn ]
 then
@@ -68,8 +59,4 @@ fi
 if [ ! -d "../CABLE-AUX" ]
 then
     svn checkout $root/branches/Share/CABLE-AUX CABLE-AUX
-    if [ "$cleanup" == true ]
-    then
-        mv CABLE-AUX ../.
-    fi
 fi
