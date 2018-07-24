@@ -68,14 +68,16 @@ if [ "$trunk" == true ]
 then
     # NB tag here doesn't mean the tagged version! See above
     svn copy $root/trunk $root/branches/Users/$user/$your_repo_name -m "$msg"
-    svn checkout $root/branches/Users/$user/$your_repo_name 
+    svn checkout $root/branches/Users/$user/$your_repo_name
 elif [ "$someones_branch" == true ]
 then
-    svn copy $root/branches/Users/$other_user/$their_branch $root/branches/Users/$user/$your_repo_name -m "$msg"
+    svn copy $root/branches/Users/$other_user/$their_branch \
+             $root/branches/Users/$user/$your_repo_name -m "$msg"
     svn checkout $root/branches/Users/$user/$your_repo_name
 elif [ "$share_branch" == true ]
 then
-    svn copy $root/branches/Share/$branch $root/branches/Users/$user/$your_repo_name -m "$msg"
+    svn copy $root/branches/Share/$branch \
+              $root/branches/Users/$user/$your_repo_name -m "$msg"
     svn checkout $root/branches/Users/$user/$your_repo_name
 elif [ "$tag_version" == true ]
 then
