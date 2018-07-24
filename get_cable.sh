@@ -85,7 +85,7 @@ then
     svn checkout $root/branches/Users/$user/$your_tag_name
 fi
 
-if [ ! -d "../CABLE-AUX" ]
+if [ ! -d "CABLE-AUX" ]
 then
     svn checkout $root/branches/Share/CABLE-AUX CABLE-AUX
 fi
