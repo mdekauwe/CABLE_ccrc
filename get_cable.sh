@@ -47,7 +47,7 @@ then
     tag_version=false
 
     branch="CMIP6-MOSRS"
-    your_repo_name=$branch"_CNP"
+    your_repo_name=$branch
 # Grab a tagged version?
 elif [ "$tag_version" == true ]
 then
