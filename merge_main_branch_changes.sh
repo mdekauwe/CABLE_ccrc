@@ -3,7 +3,7 @@
 # Merge latest changes from trunk/someones branch/shared branch/tag
 #
 # author: Martin De Kauwe
-# date:   24th July 2018
+# date: 24th July 2018
 #
 
 root="https://trac.nci.org.au/svn/cable"
