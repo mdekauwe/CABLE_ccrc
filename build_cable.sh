@@ -8,8 +8,7 @@
 #
 
 fname=build.ksh
-tag="CABLE"
-branch="trunk"
+repo_name="CMIP6-MOSRS"
 HOST_MACH=`uname -n | cut -c 1-4`
 ARCH=$(uname -s)
 
@@ -26,7 +25,7 @@ else
     SED=gsed
 fi
 
-cd $tag"_"$branch/offline
+cd $repo_name/offline
 
 # Step 1
 gawk -v var="$HOST_MACH" '/   set/ {$0=$0" "var} 1' $fname > x.tmp
