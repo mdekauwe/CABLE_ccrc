@@ -10,7 +10,7 @@
 # -> https://trac.nci.org.au/svn/cable/tags/CABLE-2.3.4/
 #
 # author: Martin De Kauwe
-# date:   23rd September 2017
+# date: 24th July 2018
 #
 
 # Default behaviour is to get the head of the trunk
