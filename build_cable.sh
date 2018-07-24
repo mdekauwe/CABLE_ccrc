@@ -14,10 +14,10 @@ ARCH=$(uname -s)
 
 if [ $ARCH == "Linux" ]
 then
-    module add intel-fc/15.0.3.187
-    module add netcdf/4.3.0
+    #module add intel-fc/15.0.3.187
+    #module add netcdf/4.3.0
     SED=sed
-    nc_path="/usr/local/netcdf/intel/4.3.0"
+    #nc_path="/usr/local/netcdf/intel/4.3.0"
     fc="ifort"
 else
     nc_path="/opt/local"
