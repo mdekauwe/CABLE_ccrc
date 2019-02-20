@@ -6,7 +6,7 @@
 # date: 24th July 2018
 #
 
-branch="CMIP6-GM2"
+branch="CMIP6-MOSRS"
 
 root="https://trac.nci.org.au/svn/cable"
 user="mgk576"
