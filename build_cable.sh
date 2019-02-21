@@ -27,12 +27,17 @@ fi
 
 cd $repo_name/offline
 
-# Step 1
-gawk -v var="$HOST_MACH" '/   set/ {$0=$0" "var} 1' $fname > x.tmp
-mv x.tmp $fname
+# Check that we've added our build args?
+TEST=$(grep "host_$HOST_MACH" $fname)
+
+if [ -z "$TEST" ];
+then
+    # Step 1
+    gawk -v var="$HOST_MACH" '/   set/ {$0=$0" "var} 1' $fname > x.tmp
+    mv x.tmp $fname
 
 # Step 2
-$SED -i "8i\\
+$SED -i "9i\\
 host_$HOST_MACH(){\\
     export NCDIR='$nc_path/lib/'\\
     export NCMOD='$nc_path/include/'\\
@@ -44,9 +49,14 @@ host_$HOST_MACH(){\\
     cd ../\\
     build_status\\
 }\\
-" $fname
+    " $fname
 
-# Step 3
-chmod +x build.ksh
-./build.ksh
-cd ../../
+    # Step 3
+    chmod +x build.ksh
+    ./build.ksh clean
+    cd ../../
+else
+    chmod +x build.ksh
+    ./build.ksh clean
+    cd ../../
+fi
